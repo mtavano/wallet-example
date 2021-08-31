@@ -13,4 +13,6 @@ as follows
 PORT=9000 go run cmd/main.go
 ```
 
-and then you can use the insomnia collection to try it out
+and then you can use the insomnia collection to try it out.
+
+Also you can simple run one of the available builds into the `bin` folder
