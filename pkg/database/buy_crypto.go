@@ -1,9 +1,5 @@
 package database
 
-import (
-	"github.com/pkg/errors"
-)
-
 type BuyCryptoInput struct {
 	UserID   string
 	Currency Currency
@@ -18,10 +14,10 @@ func (st *Store) BuyCrypto(input *BuyCryptoInput) (int64, int64, error) {
 	newFiatBalance, err := st.writeTransaction(&writeTransactionInput{
 		UserID:   input.UserID,
 		Currency: CurrencyUSDC,
-		Amount:   int64(-1 * fiatAmountToSpent * 100), // we are loading cents again
+		Amount:   -1 * int64(fiatAmountToSpent*100), // we are loading cents again
 	})
 	if err != nil {
-		return 0, 0, errors.Wrap(err, "wrapped: error")
+		return 0, 0, err
 	}
 
 	newCryptoBalance, err := st.writeTransaction(&writeTransactionInput{
