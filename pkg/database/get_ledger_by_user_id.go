@@ -2,7 +2,7 @@ package database
 
 import "errors"
 
-var ErrUserNotFound = errors.New("database: user not found")
+var ErrUserNotFound = errors.New("user not found")
 
 func (st *Store) GetLedgerByUserID(userID string) (*Ledger, error) {
 	st.mu.RLock()

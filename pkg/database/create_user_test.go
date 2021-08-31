@@ -31,7 +31,7 @@ func Test_Store_CreateUser(t *testing.T) {
 }
 
 func Test_Store_CreateUser_Error_UserAlreadyExist(t *testing.T) {
-	expectedErrMsg := "database: Store.CreateUser user already exist"
+	expectedErrMsg := ErrUserAlreadyExist.Error()
 
 	st := NewStore(time.Now)
 	userID := "user-id-001"

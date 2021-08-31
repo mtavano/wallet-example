@@ -6,8 +6,12 @@ import (
 )
 
 // Currency string alias
-type Currency string
 type UserID string
+type Currency string
+
+func (c Currency) String() string {
+	return string(c)
+}
 
 const (
 	CurrencyUSDC Currency = "USDC"

@@ -30,7 +30,7 @@ func (st *Store) CreateTransfer(input *CreateTransferInput) (int64, int64, error
 	}
 
 	newDestinationBalance, err := st.writeTransaction(&writeTransactionInput{
-		UserID:   input.SourceID,
+		UserID:   input.DestinationID,
 		Amount:   int64(input.Amount),
 		Currency: input.Currency,
 	})

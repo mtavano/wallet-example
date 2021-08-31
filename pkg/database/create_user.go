@@ -2,7 +2,7 @@ package database
 
 import "errors"
 
-var ErrorUserAlreadyExist = errors.New("database: Store.CreateUser user already exist")
+var ErrUserAlreadyExist = errors.New("user already exist")
 
 func (st *Store) CreateUser(userid string) error {
 	st.mu.Lock()
@@ -15,7 +15,7 @@ func (st *Store) createUser(userid string) error {
 	userID := UserID(userid)
 
 	if _, ok := st.userLedgers[userID]; ok {
-		return ErrorUserAlreadyExist
+		return ErrUserAlreadyExist
 	}
 
 	transactionsCurrency := make(map[Currency][]*Tx)

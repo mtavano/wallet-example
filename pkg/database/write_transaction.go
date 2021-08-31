@@ -5,7 +5,7 @@ import (
 )
 
 var (
-	ErrInsuficientFunds = errors.New("database: Store.WriteTransaction insufficient fund")
+	ErrInsuficientFunds = errors.New("insufficient funds")
 )
 
 type writeTransactionInput struct {
