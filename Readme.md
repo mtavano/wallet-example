@@ -15,4 +15,5 @@ PORT=9000 go run cmd/main.go
 
 and then you can use the insomnia collection to try it out.
 
-Also you can simple run one of the available builds into the `bin` folder
+Also you can simple run one of the available builds into the `bin` folder according your OS.
+Only MacOSX and Linux supported.
